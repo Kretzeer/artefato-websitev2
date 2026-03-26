@@ -56,6 +56,11 @@ img {
   color: var(--black);
 }
 
+.round-dot {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+}
+
 /* ── NAV ── */
 .nav {
   display: grid;
