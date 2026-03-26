@@ -50,7 +50,7 @@ img {
 
 .display {
   font-size: clamp(45px, 7vw, 102px);
-  font-weight: 800;
+  font-weight: 300;
   letter-spacing: 0;
   line-height: 0.93;
   color: var(--black);
