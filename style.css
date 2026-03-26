@@ -300,6 +300,197 @@ img {
   color: var(--rule);
 }
 
+/* ── SERVIÇOS ── */
+.servicos {
+  padding: 0 0 96px;
+}
+
+.servicos > .section-index {
+  margin: 0 48px 64px;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.servico-card {
+  padding: 36px 52px 40px 48px;
+  border-top: 0.5px solid var(--rule);
+  border-right: 0.5px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background 0.25s ease;
+}
+
+.servico-card:hover {
+  background: #EDEAE3;
+}
+
+.servico-card:nth-child(-n+3) { border-top: none; }
+.servico-card:nth-child(3n)   { border-right: none; }
+
+.servico-num {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+}
+
+.servico-titulo {
+  font-size: 19px;
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.2;
+}
+
+.servico-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+/* ── CONTATO ── */
+.contato {
+  border-top: 0.5px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contato-esq {
+  padding: 96px 64px 96px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contato-titulo {
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+
+.contato-texto {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.85;
+  margin-bottom: 48px;
+}
+
+.contato-dados {
+  list-style: none;
+  margin-top: auto;
+}
+
+.contato-dado {
+  border-top: 0.5px solid var(--rule);
+  padding: 16px 0;
+}
+
+.contato-dado-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--mid);
+  margin-bottom: 5px;
+}
+
+.contato-dado-valor {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--black);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contato-dado-valor:hover { color: var(--mid); }
+
+.contato-dir {
+  padding: 96px 48px 96px 64px;
+  border-left: 0.5px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 28px;
+}
+
+.form-input {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--black);
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid var(--rule);
+  outline: none;
+  padding: 14px 0;
+  width: 100%;
+  transition: border-bottom-color 0.25s ease;
+}
+
+.form-input::placeholder { color: var(--mid); font-weight: 300; }
+.form-input:focus { border-bottom-color: var(--black); }
+
+.form-textarea {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--black);
+  background: #EDEAE3;
+  border: none;
+  outline: none;
+  padding: 20px;
+  min-height: 200px;
+  resize: none;
+  width: 100%;
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+
+.form-hint {
+  display: block;
+  font-size: 10px;
+  font-weight: 300;
+  color: var(--rule);
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+}
+
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--black);
+  color: #ffffff;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.btn-whatsapp:hover { background: #1e1e1c; }
+.btn-whatsapp svg   { flex-shrink: 0; }
+
 /* ── FOOTER ── */
 .footer {
   padding: 48px 48px 56px;
@@ -375,6 +566,35 @@ img {
   .projeto--split-reverse .projeto-grid .projeto-image--large {
     height: 55vw;
     min-height: 240px;
+  }
+
+  .servicos > .section-index {
+    margin: 0 24px 48px;
+  }
+
+  .servicos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .servico-card:nth-child(-n+3) { border-top: 0.5px solid var(--rule); }
+  .servico-card:nth-child(3n)   { border-right: 0.5px solid var(--rule); }
+  .servico-card:nth-child(-n+2) { border-top: none; }
+  .servico-card:nth-child(2n)   { border-right: none; }
+
+  .servico-card { padding: 28px 24px 32px; }
+
+  .contato {
+    grid-template-columns: 1fr;
+  }
+
+  .contato-esq {
+    padding: 64px 24px 48px;
+  }
+
+  .contato-dir {
+    padding: 48px 24px 64px;
+    border-left: none;
+    border-top: 0.5px solid var(--rule);
   }
 
   .footer {
