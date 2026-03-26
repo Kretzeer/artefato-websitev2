@@ -97,8 +97,8 @@ img {
 
 /* ── NAV ── */
 .nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 28px 48px;
   border-bottom: 0.5px solid var(--rule);
@@ -565,7 +565,6 @@ img {
 @media (max-width: 768px) {
   .nav {
     padding: 20px 24px;
-    grid-template-columns: 1fr 1fr;
   }
 
   .nav-links { gap: 20px; }
