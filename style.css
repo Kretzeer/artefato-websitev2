@@ -115,8 +115,24 @@ img {
   width: auto;
   display: block;
 }
-.nav-center { text-align: center; line-height: 1.6; }
-.nav-right  { text-align: right; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover { color: var(--black); }
 
 /* ── HERO ── */
 .hero {
@@ -552,8 +568,7 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
-  .nav-center { display: none; }
-  .nav-right  { text-align: right; }
+  .nav-links { gap: 20px; }
 
   .hero-name {
     padding: 32px 24px 28px;
