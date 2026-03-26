@@ -51,6 +51,7 @@ img {
 .display {
   font-size: clamp(56px, 10vw, 148px);
   font-weight: 800;
+  font-style: italic;
   letter-spacing: -0.03em;
   line-height: 0.93;
   color: var(--black);
@@ -88,10 +89,6 @@ img {
   display: flex;
   align-items: flex-end;
   gap: 40px;
-}
-
-.display .line {
-  display: block;
 }
 
 .hero-tag {
