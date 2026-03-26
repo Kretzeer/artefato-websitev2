@@ -16,6 +16,28 @@ document.querySelectorAll('.hero-image img, .projeto-image img').forEach(img => 
   }
 });
 
+// HERO — typewriter
+(function () {
+  const word   = 'Artefato';
+  const typed  = document.getElementById('hero-typed');
+  const cursor = document.getElementById('hero-cursor');
+  const dot    = document.getElementById('hero-dot');
+  let i = 0;
+
+  function typeNext() {
+    if (i < word.length) {
+      typed.textContent += word[i];
+      i++;
+      setTimeout(typeNext, 76);
+    } else {
+      cursor.classList.add('done');
+      setTimeout(() => dot.classList.add('visible'), 240);
+    }
+  }
+
+  setTimeout(typeNext, 400);
+})();
+
 // Contato — sincroniza campos com textarea e abre WhatsApp
 (function () {
   const btn      = document.getElementById('btn-wpp');

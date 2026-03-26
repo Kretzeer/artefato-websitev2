@@ -61,6 +61,41 @@ img {
   font-weight: 400;
 }
 
+.hero-dot {
+  display: inline-block;
+  width: 0.135em;
+  height: 0.135em;
+  background: var(--black);
+  border-radius: 50%;
+  flex-shrink: 0;
+  align-self: flex-end;
+  margin-left: 0.06em;
+  margin-bottom: 0.19em;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-dot.visible { opacity: 1; }
+
+.hero-cursor {
+  display: inline-block;
+  width: 0.04em;
+  height: 0.82em;
+  background: var(--black);
+  margin-left: 0.06em;
+  position: relative;
+  bottom: -0.05em;
+  animation: cursor-blink 1.2s steps(1) infinite;
+  transition: opacity 0.2s ease;
+}
+
+.hero-cursor.done { opacity: 0; }
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
 /* ── NAV ── */
 .nav {
   display: grid;
