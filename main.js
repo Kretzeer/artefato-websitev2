@@ -1,17 +1,18 @@
 // Artefato Empreendimentos v2
 
-// Oculta o placeholder quando a imagem carrega com sucesso
+// Revela imagem e oculta placeholder quando o arquivo carrega com sucesso.
+// Se a imagem não existir, o placeholder (bloco de cor) permanece visível.
 document.querySelectorAll('.hero-image img, .projeto-image img').forEach(img => {
   const placeholder = img.nextElementSibling;
-  if (!placeholder) return;
+
+  function onLoad() {
+    img.classList.add('loaded');
+    if (placeholder) placeholder.classList.add('hidden');
+  }
 
   if (img.complete && img.naturalWidth > 0) {
-    placeholder.style.opacity = '0';
-    placeholder.style.pointerEvents = 'none';
+    onLoad();
   } else {
-    img.addEventListener('load', () => {
-      placeholder.style.opacity = '0';
-      placeholder.style.pointerEvents = 'none';
-    });
+    img.addEventListener('load', onLoad);
   }
 });

@@ -121,32 +121,31 @@ img {
   inset: 0;
 }
 
-/* Placeholder enquanto não há foto */
+/* Imagens ocultas por padrão — reveladas via JS ao carregar */
+.hero-image img,
+.projeto-image img {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.hero-image img.loaded,
+.projeto-image img.loaded {
+  opacity: 1;
+}
+
+/* Placeholder — bloco de cor sólida, sem texto */
 .hero-image-placeholder,
 .projeto-image-placeholder {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--rule);
-  opacity: 1;
-  transition: opacity 0.2s;
+  background-color: #D9D5CC;
+  transition: opacity 0.4s ease;
 }
 
-.hero-image img[src="./assets/hero.jpg"] + .hero-image-placeholder,
-.projeto-image img:not([src=""]) + .projeto-image-placeholder {
+.hero-image-placeholder.hidden,
+.projeto-image-placeholder.hidden {
   opacity: 0;
   pointer-events: none;
-}
-
-.hero-image-placeholder span,
-.projeto-image-placeholder span {
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--mid);
 }
 
 /* Bloco C */
