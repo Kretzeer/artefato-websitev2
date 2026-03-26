@@ -72,7 +72,13 @@ img {
   color: var(--mid);
 }
 
-.nav-left  { text-align: left; }
+.nav-left  { text-align: left; display: flex; align-items: center; }
+
+.nav-logo {
+  height: 20px;
+  width: auto;
+  display: block;
+}
 .nav-center { text-align: center; line-height: 1.6; }
 .nav-right  { text-align: right; }
 
