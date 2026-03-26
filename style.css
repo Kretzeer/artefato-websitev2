@@ -1,1 +1,382 @@
-/* Artefato Empreendimentos v2 */
+/* ============================================================
+   Artefato Empreendimentos — v2
+   Referência: Sirotov Architects concept
+   ============================================================ */
+
+:root {
+  --bg:    #F2F0EB;
+  --black: #111110;
+  --mid:   #6b6b67;
+  --rule:  #D8D6CF;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--black);
+  font-family: 'Syne', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Tipografia — classes utilitárias ── */
+.label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.display {
+  font-size: clamp(56px, 10vw, 148px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.93;
+  color: var(--black);
+}
+
+/* ── NAV ── */
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 28px 48px;
+  border-bottom: 0.5px solid var(--rule);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--mid);
+}
+
+.nav-left  { text-align: left; }
+.nav-center { text-align: center; line-height: 1.6; }
+.nav-right  { text-align: right; }
+
+/* ── HERO ── */
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bloco A */
+.hero-name {
+  padding: 48px 48px 40px;
+}
+
+.hero-title-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.display .line {
+  display: block;
+}
+
+.hero-tag {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--mid);
+  line-height: 1.6;
+  padding-bottom: 8px;
+  white-space: nowrap;
+}
+
+.hero-tag span {
+  display: block;
+}
+
+/* Bloco B */
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.hero-image img {
+  position: absolute;
+  inset: 0;
+}
+
+/* Placeholder enquanto não há foto */
+.hero-image-placeholder,
+.projeto-image-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--rule);
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.hero-image img[src="./assets/hero.jpg"] + .hero-image-placeholder,
+.projeto-image img:not([src=""]) + .projeto-image-placeholder {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-image-placeholder span,
+.projeto-image-placeholder span {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+/* Bloco C */
+.hero-about {
+  padding: 56px 48px 88px;
+}
+
+.section-index {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: 0.5px solid var(--rule);
+  padding-top: 14px;
+  margin-bottom: 48px;
+}
+
+.index-num {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.index-label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.hero-about-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  max-width: 840px;
+}
+
+.col-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+
+.about-col p {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--black);
+  max-width: 320px;
+}
+
+/* ── PROJETOS ── */
+.projetos {
+  padding-top: 0;
+}
+
+.projetos > .section-index {
+  margin: 0 48px 64px;
+}
+
+.projeto {
+  margin-bottom: 0;
+}
+
+/* Full-bleed */
+.projeto--full .projeto-image {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.projeto--full .projeto-image img {
+  position: absolute;
+  inset: 0;
+  transition: filter 0.4s ease;
+}
+
+.projeto--full:hover .projeto-image img {
+  filter: brightness(0.88);
+}
+
+/* Grid assimétrico */
+.projeto--split .projeto-grid {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  gap: 0;
+  width: 100%;
+  height: 60vh;
+  min-height: 360px;
+}
+
+.projeto--split-reverse .projeto-grid {
+  grid-template-columns: 3fr 7fr;
+}
+
+.projeto-image--large,
+.projeto-image--small {
+  position: relative;
+  overflow: hidden;
+}
+
+.projeto-image--large img,
+.projeto-image--small img {
+  position: absolute;
+  inset: 0;
+  transition: filter 0.4s ease;
+}
+
+.projeto--split:hover .projeto-image img {
+  filter: brightness(0.88);
+}
+
+/* Placeholders internos para projetos */
+.projeto-image-placeholder {
+  position: absolute;
+  inset: 0;
+}
+
+/* Meta linha */
+.projeto-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  padding: 16px 48px;
+  border-top: 0.5px solid var(--rule);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.projeto-meta span {
+  flex: none;
+}
+
+.projeto-meta span + span::before {
+  content: '·';
+  margin: 0 14px;
+  color: var(--rule);
+}
+
+/* ── FOOTER ── */
+.footer {
+  padding: 48px 48px 56px;
+  margin-top: 80px;
+}
+
+.footer-rule {
+  border-top: 0.5px solid var(--rule);
+  margin-bottom: 24px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--mid);
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 768px) {
+  .nav {
+    padding: 20px 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-center { display: none; }
+  .nav-right  { text-align: right; }
+
+  .hero-name {
+    padding: 32px 24px 28px;
+  }
+
+  .hero-title-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .hero-about {
+    padding: 40px 24px 64px;
+  }
+
+  .hero-about-cols {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .projetos > .section-index {
+    margin: 0 24px 48px;
+  }
+
+  .projeto-meta {
+    padding: 14px 24px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .projeto--split .projeto-grid,
+  .projeto--split-reverse .projeto-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .projeto--split .projeto-grid .projeto-image--small,
+  .projeto--split-reverse .projeto-grid .projeto-image--small {
+    height: 30vw;
+    min-height: 160px;
+  }
+
+  .projeto--split .projeto-grid .projeto-image--large,
+  .projeto--split-reverse .projeto-grid .projeto-image--large {
+    height: 55vw;
+    min-height: 240px;
+  }
+
+  .footer {
+    padding: 40px 24px 48px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

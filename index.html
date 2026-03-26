@@ -4,9 +4,173 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artefato Empreendimentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav-left">Artefato Empreendimentos</span>
+    <span class="nav-center">
+      Arquitetura &amp; Gestão<br>Brusque, SC
+    </span>
+    <span class="nav-right">2026</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- BLOCO A — Nome display -->
+    <div class="hero-name">
+      <div class="hero-name-inner">
+        <div class="hero-title-wrap">
+          <h1 class="display">
+            <span class="line">Artefato</span>
+            <span class="line">Empreendimentos</span>
+          </h1>
+          <div class="hero-tag">
+            <span>arquitetura &amp;</span>
+            <span>gestão de obras</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCO B — Foto full-bleed -->
+    <div class="hero-image">
+      <img src="./assets/hero.jpg" alt="Obra Artefato Empreendimentos" />
+      <div class="hero-image-placeholder" aria-hidden="true">
+        <span>hero.jpg</span>
+      </div>
+    </div>
+
+    <!-- BLOCO C — Indexação + texto institucional -->
+    <div class="hero-about">
+      <div class="section-index">
+        <span class="index-num">01/</span>
+        <span class="index-label">Sobre o Escritório</span>
+      </div>
+      <div class="hero-about-cols">
+        <div class="about-col">
+          <h2 class="col-title">Introdução</h2>
+          <p>A Artefato Empreendimentos atua no desenvolvimento e execução de projetos de arquitetura residencial e comercial, com base em Brusque, Santa Catarina. Nosso trabalho une precisão técnica e sensibilidade estética em cada obra.</p>
+        </div>
+        <div class="about-col">
+          <h2 class="col-title">Abordagem</h2>
+          <p>Cada projeto começa pelo entendimento do lugar e do cliente. Gerenciamos obras do projeto executivo à entrega final, mantendo controle rigoroso de prazo, custo e qualidade construtiva.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="projetos">
+
+    <div class="section-index">
+      <span class="index-num">02/</span>
+      <span class="index-label">Projetos</span>
+    </div>
+
+    <!-- Projeto 01 — imagem full-bleed -->
+    <article class="projeto projeto--full">
+      <div class="projeto-image">
+        <img src="./assets/projetos/projeto-01.jpg" alt="Residência Ipiranga" />
+        <div class="projeto-image-placeholder" aria-hidden="true">
+          <span>projeto-01.jpg</span>
+        </div>
+      </div>
+      <div class="projeto-meta">
+        <span>01</span>
+        <span>Residência Ipiranga</span>
+        <span>Brusque, SC</span>
+        <span>Residencial</span>
+        <span>2024</span>
+      </div>
+    </article>
+
+    <!-- Projeto 02 — grid assimétrico 70/30 -->
+    <article class="projeto projeto--split">
+      <div class="projeto-grid">
+        <div class="projeto-image projeto-image--large">
+          <img src="./assets/projetos/projeto-02a.jpg" alt="Comercial Centro" />
+          <div class="projeto-image-placeholder" aria-hidden="true">
+            <span>projeto-02a.jpg</span>
+          </div>
+        </div>
+        <div class="projeto-image projeto-image--small">
+          <img src="./assets/projetos/projeto-02b.jpg" alt="Comercial Centro — detalhe" />
+          <div class="projeto-image-placeholder" aria-hidden="true">
+            <span>projeto-02b.jpg</span>
+          </div>
+        </div>
+      </div>
+      <div class="projeto-meta">
+        <span>02</span>
+        <span>Comercial Centro</span>
+        <span>Brusque, SC</span>
+        <span>Comercial</span>
+        <span>2023</span>
+      </div>
+    </article>
+
+    <!-- Projeto 03 — imagem full-bleed -->
+    <article class="projeto projeto--full">
+      <div class="projeto-image">
+        <img src="./assets/projetos/projeto-03.jpg" alt="Edifício Vila Nova" />
+        <div class="projeto-image-placeholder" aria-hidden="true">
+          <span>projeto-03.jpg</span>
+        </div>
+      </div>
+      <div class="projeto-meta">
+        <span>03</span>
+        <span>Edifício Vila Nova</span>
+        <span>Brusque, SC</span>
+        <span>Multifamiliar</span>
+        <span>2025</span>
+      </div>
+    </article>
+
+    <!-- Projeto 04 — grid assimétrico 30/70 (invertido) -->
+    <article class="projeto projeto--split projeto--split-reverse">
+      <div class="projeto-grid">
+        <div class="projeto-image projeto-image--small">
+          <img src="./assets/projetos/projeto-04a.jpg" alt="Casa Tijucas — detalhe" />
+          <div class="projeto-image-placeholder" aria-hidden="true">
+            <span>projeto-04a.jpg</span>
+          </div>
+        </div>
+        <div class="projeto-image projeto-image--large">
+          <img src="./assets/projetos/projeto-04b.jpg" alt="Casa Tijucas" />
+          <div class="projeto-image-placeholder" aria-hidden="true">
+            <span>projeto-04b.jpg</span>
+          </div>
+        </div>
+      </div>
+      <div class="projeto-meta">
+        <span>04</span>
+        <span>Casa Tijucas</span>
+        <span>Tijucas, SC</span>
+        <span>Residencial</span>
+        <span>2025</span>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="footer-rule"></div>
+    <div class="footer-inner">
+      <span>Artefato Empreendimentos</span>
+      <span>Brusque, SC · Brasil</span>
+      <span>&copy; 2026</span>
+    </div>
+  </footer>
+
   <script src="main.js"></script>
 </body>
 </html>
