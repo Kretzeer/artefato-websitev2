@@ -54,9 +54,6 @@ img {
   letter-spacing: 0;
   line-height: 0.93;
   color: var(--black);
-  transform: scaleX(0.75);
-  transform-origin: left center;
-  display: inline-block;
 }
 
 /* ── NAV ── */
