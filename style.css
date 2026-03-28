@@ -54,7 +54,6 @@ img {
   font-weight: 300;
   letter-spacing: 0;
   line-height: 0.93;
-  color: var(--black);
 }
 
 .round-dot {
@@ -137,13 +136,42 @@ img {
 
 /* ── HERO ── */
 .hero {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 480px;
+  overflow: hidden;
 }
 
-/* Bloco A */
+/* Imagem de fundo */
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-image img {
+  position: absolute;
+  inset: 0;
+}
+
+/* Gradiente sutil para legibilidade do texto */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17,17,16,0.45) 0%, transparent 55%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Texto sobreposto — ancorado na base */
 .hero-name {
-  padding: 48px 48px 40px;
+  position: absolute;
+  bottom: 48px;
+  left: 48px;
+  right: 48px;
+  z-index: 2;
 }
 
 .hero-title-wrap {
@@ -155,7 +183,7 @@ img {
 .hero-tag {
   font-size: 13px;
   font-weight: 400;
-  color: var(--mid);
+  color: rgba(255,255,255,0.75);
   line-height: 1.6;
   padding-bottom: 8px;
   white-space: nowrap;
@@ -165,18 +193,14 @@ img {
   display: block;
 }
 
-/* Bloco B */
-.hero-image {
-  position: relative;
-  width: 100%;
-  height: 60vh;
-  min-height: 360px;
-  overflow: hidden;
+/* Texto do hero em branco sobre a imagem */
+.display {
+  color: #ffffff;
 }
 
-.hero-image img {
-  position: absolute;
-  inset: 0;
+.hero-cursor,
+.hero-dot {
+  background: #ffffff;
 }
 
 /* Imagens ocultas por padrão — reveladas via JS ao carregar */
@@ -580,9 +604,11 @@ img {
     gap: 16px;
   }
 
-  .hero-tag { font-size: 12px; }
+  .hero { height: 70vh; min-height: 380px; }
 
-  .hero-image { height: 50vh; min-height: 280px; }
+  .hero-name { bottom: 32px; left: 24px; right: 24px; }
+
+  .hero-tag { font-size: 12px; }
 
   .hero-about {
     padding: 40px 24px 64px;
@@ -689,7 +715,9 @@ img {
 
   .hero-name { padding: 24px 20px 20px; }
 
-  .hero-image { height: 60vw; min-height: 220px; }
+  .hero { height: 65vw; min-height: 320px; }
+
+  .hero-name { bottom: 24px; left: 20px; right: 20px; }
 
   .hero-about { padding: 36px 20px 56px; }
 
